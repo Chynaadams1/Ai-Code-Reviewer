@@ -14,3 +14,5 @@ An AI-powered code review assistant that integrates with GitHub pull requests to
 - GitHub Webhooks
 - Async Processing
 
+## Goal
+To build an AI system that understands multi-file context and provides developer-level feedback.
