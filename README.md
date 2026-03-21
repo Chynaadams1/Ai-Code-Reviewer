@@ -8,7 +8,7 @@ An AI-powered code review assistant that integrates with GitHub pull requests to
 2. GitHub sends a webhook event to this server
 3. The server fetches the PR's unified diff
 4. OpenAI GPT-4o analyzes the diff and generates a structured review
-5. The review is automatically posted as a comment on your PR ✅
+5. The review is automatically posted as a comment on your PR 
 
 ---
 
@@ -83,11 +83,14 @@ Copy the `https://xxxx.ngrok.io` URL for the next step.
 ## Registering the GitHub Webhook
 
 1. Go to your repo → **Settings** → **Webhooks** → **Add webhook**
-2. **Payload URL:** `https://your-ngrok-url/webhook/github`
+2. **Payload URL:** `https://your-cloudflare-url.trycloudflare.com/webhook/github`
 3. **Content type:** `application/json`
 4. **Secret:** same value as `GITHUB_WEBHOOK_SECRET` in your `.env`
-5. **Events:** Select **"Pull requests"** only
+5. **Events:** Select "Let me select individual events" → check **Pull requests** only
 6. Click **Add webhook**
+
+> 💡 To get a free public URL, run: `npx cloudflared tunnel --url http://localhost:8001`
+> Copy the `https://...trycloudflare.com` URL it generates.
 
 ---
 
